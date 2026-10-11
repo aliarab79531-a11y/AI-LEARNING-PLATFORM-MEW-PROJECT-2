@@ -1,0 +1,68 @@
+{
+  "name": "nexalearn-ai",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "backend:dev": "node --env-file-if-exists=.env --import tsx src/api-dev.ts",
+    "build": "node --env-file-if-exists=.env ./node_modules/@angular/cli/bin/ng.js build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "test:api": "node --import tsx --test tests/api/validation.spec.ts",
+    "seed:demo": "node --env-file-if-exists=.env scripts/seed-demo.mjs",
+    "serve:ssr:ai-learning-platform": "node --env-file-if-exists=.env dist/ai-learning-platform/server/server.mjs",
+    "create:admin": "node --env-file-if-exists=.env scripts/create-admin.mjs"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/compiler": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/forms": "^22.2.0",
+    "@angular/platform-browser": "^22.2.0",
+    "@angular/platform-server": "^22.2.0",
+    "@angular/router": "^22.2.0",
+    "@angular/ssr": "^22.2.0",
+    "bootstrap": "^5.3.8",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "pg": "^8.23.1",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.2.0",
+    "@angular/cli": "^22.2.0",
+    "@angular/compiler-cli": "^22.2.0",
+    "@types/express": "^5.0.1",
+    "@types/jasmine": "~5.1.0",
+    "@types/node": "^26.6.3",
+    "@types/pg": "^8.23.1",
+    "istanbul-lib-instrument": "^6.0.3",
+    "jasmine-core": "~5.9.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3"
+  }
+}

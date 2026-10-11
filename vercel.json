@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "angular",
+  "installCommand": "npm ci --include=dev",
+  "buildCommand": "node ./node_modules/@angular/cli/bin/ng.js build",
+  "outputDirectory": "dist/ai-learning-platform/browser",
+  "regions": ["dub1"],
+  "rewrites": [
+    { "source": "/:path((?!api/).*)", "destination": "/index.html" }
+  ]
+}
